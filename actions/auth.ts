@@ -28,6 +28,9 @@ export async function loginAction(formData: FormData) {
     .single();
 
   if (profileError || !profile) {
+    // INI RADAR KITA:
+    console.log("🚨 ERROR DARI SUPABASE:", profileError);
+    console.log("ID USER YANG DICARI:", authData.user.id);
     return { error: "Gagal mengambil data profil pengguna." };
   }
 
@@ -39,4 +42,14 @@ export async function loginAction(formData: FormData) {
   } else {
     redirect("/dashboard");
   }
+}
+// Tambahkan fungsi ini di bagian paling bawah file auth.ts
+export async function logoutAction() {
+  const supabase = await createClient();
+  
+  // Perintahkan Supabase untuk menghapus sesi login saat ini
+  await supabase.auth.signOut();
+  
+  // Tendang user kembali ke halaman login
+  redirect("/login");
 }
