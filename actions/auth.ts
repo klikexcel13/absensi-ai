@@ -40,7 +40,7 @@ export async function loginAction(formData: FormData) {
   if (userRole === "admin") {
     redirect("/admin");
   } else {
-    redirect("/dashboard");
+    redirect("/karyawan");
   }
 }
 // Tambahkan fungsi ini di bagian paling bawah file auth.ts
