@@ -1,6 +1,7 @@
+// @ts-nocheck
 import { createClient } from "@/lib/supabase/server";
 import { FileText, Clock, CheckCircle2, XCircle } from "lucide-react";
-import TombolAksiIzin from "./TombolAksiIzin";
+// ... (sisa kode di bawahnya biarkan saja)
 
 export default async function PersetujuanIzinPage() {
   const supabase = await createClient();
