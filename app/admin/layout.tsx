@@ -1,7 +1,7 @@
 "use client"; // Wajib ditambahkan karena kita butuh State untuk tombol klik
 
 import { useState } from "react";
-import { LogOut, Users, Settings, LayoutDashboard, Menu, ClipboardList } from "lucide-react";
+import { LogOut, Users, Settings, LayoutDashboard, Menu, ClipboardList, FileCheck } from "lucide-react";
 import { logoutAction } from "@/actions/auth";
 import Link from "next/link";
 
@@ -34,8 +34,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <Link href="/admin/absensi" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-lg font-medium transition-colors">
               <ClipboardList size={20} /> Rekap Absensi
             </Link>
+            {/* Tambahkan MENU PERSETUJUAN IZIN di sini */}
+            <Link href="/admin/izin" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-lg font-medium transition-colors">
+              <FileCheck size={20} /> Persetujuan Izin
+            </Link>
 
-            <Link href="#" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium transition-colors">
+           <Link href="/admin/pengaturan" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-blue-600 rounded-lg font-medium transition-colors">
               <Settings size={20} /> Pengaturan
             </Link>
           </nav>
