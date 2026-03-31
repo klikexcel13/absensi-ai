@@ -12,6 +12,20 @@ export default async function AdminDashboard({
   const supabase = await createClient();
   const params = await searchParams;
 
+// Tambahkan baris ini di deretan paling atas file kamu:
+import Link from 'next/link';
+
+// ... kode import lainnya (jika ada)
+
+export default function AdminPage() {
+  return (
+    <div>
+      {/* Tanpa import di atas, baris di bawah ini yang bikin web kamu crash */}
+      <Link href="/dashboard">Ke Dashboard</Link> 
+    </div>
+  )
+}
+
   // 1. Tentukan Tanggal: Default ke Hari Ini kalau tidak ada parameter
   const hariIni = new Date().toLocaleDateString('en-CA'); // Format YYYY-MM-DD
   const selectedDate = params.tanggal || hariIni;
