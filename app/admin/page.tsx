@@ -18,7 +18,6 @@ export default async function AdminDashboard({
 export default function AdminPage() {
   return (
     <div>
-      {/* Tanpa import di atas, baris di bawah ini yang bikin web kamu crash */}
       <Link href="/dashboard">Ke Dashboard</Link> 
     </div>
   )
