@@ -1,8 +1,17 @@
 // @ts-nocheck
+import Link from 'next/link';
 import { createClient } from "@/lib/supabase/server";
 import { Users, UserCheck, Clock, AlertTriangle, ArrowRight, CalendarDays, Search } from "lucide-react";
-import Link from 'next/link';
 // ... (sisa kode di bawahnya biarkan saja)
+
+export default function AdminPage() {
+  return (
+    <div>
+       <h1>Selamat Datang di Halaman Admin</h1>
+       <Link href="/dashboard">Ke Dashboard</Link>
+    </div>
+  );
+}
 
 // Tambahkan searchParams sebagai Promise (standar Next.js terbaru)
 export default async function AdminDashboard({
@@ -13,15 +22,6 @@ export default async function AdminDashboard({
   const supabase = await createClient();
   const params = await searchParams;
 
-// ... kode import lainnya (jika ada)
-
-export default function AdminPage() {
-  return (
-    <div>
-      <Link href="/dashboard">Ke Dashboard</Link> 
-    </div>
-  )
-}
 
   // 1. Tentukan Tanggal: Default ke Hari Ini kalau tidak ada parameter
   const hariIni = new Date().toLocaleDateString('en-CA'); // Format YYYY-MM-DD
