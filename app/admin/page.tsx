@@ -4,14 +4,6 @@ import { createClient } from "@/lib/supabase/server";
 import { Users, UserCheck, Clock, AlertTriangle, ArrowRight, CalendarDays, Search } from "lucide-react";
 // ... (sisa kode di bawahnya biarkan saja)
 
-export default function AdminPage() {
-  return (
-    <div>
-       <h1>Selamat Datang di Halaman Admin</h1>
-       <Link href="/dashboard">Ke Dashboard</Link>
-    </div>
-  );
-}
 
 // Tambahkan searchParams sebagai Promise (standar Next.js terbaru)
 export default async function AdminDashboard({
