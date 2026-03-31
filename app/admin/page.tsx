@@ -13,9 +13,6 @@ export default async function AdminDashboard({
   const supabase = await createClient();
   const params = await searchParams;
 
-// Tambahkan baris ini di deretan paling atas file kamu:
-import Link from 'next/link';
-
 // ... kode import lainnya (jika ada)
 
 export default function AdminPage() {
