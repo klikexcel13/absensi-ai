@@ -17,7 +17,11 @@ export async function loginAction(formData: FormData) {
   });
 
   if (authError) {
-    return { error: "Email atau password salah." };
+    // Kita log ke Vercel agar terekam di sistem
+    console.error("Supabase Auth Error Detail:", authError.message); 
+    
+    // Kita kirimkan pesan error asli dari Supabase ke browser
+    return { error: authError.message }; 
   }
 
   // 2. Ambil role (Admin/Karyawan) dari tabel profiles yang sudah kita buat
